@@ -157,9 +157,13 @@
 			
 			
 			
-			rand=Math.floor(Math.random() * 3+1);
-			const ids="pregunta"+rand;
+			do{
+    			var pivot=rand;
+				rand=Math.floor(Math.random() * 4+1);
+    		}while(rand==pivot);
 
+			const ids="pregunta"+rand;
+			console.log(ids);
 			document.getElementById(ids).classList.remove("oculto");
 		}
 	</script>
