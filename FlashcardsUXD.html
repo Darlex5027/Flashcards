@@ -1,0 +1,167 @@
+<!DOCTYPE html><center>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cambiar visibilidad con botón</title>
+	<style>
+		/* Colores */
+		body {
+  			background-color: #f7f7f7;
+  			color: #444;
+		}
+
+		h1, h2 {
+  			color: #333;
+  			font-weight: bold;
+		}
+
+		#box1 {
+  			background-color: #fff;
+  			border-radius: 10px;
+  			padding: 20px;
+  			margin: 20px auto;
+  			box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+		}
+
+		/* Preguntas y respuestas */
+		p {
+  			margin-bottom: 10px;
+		}
+
+
+
+		.oculto {
+  			display: none;
+		}
+
+		ul {
+  		list-style: none;
+  			padding: 0;	
+		}
+
+		li {
+			width: 150	px;
+			margin-bottom: 5px;
+		}
+
+		/* Botones */
+		button {
+			background-color: #333;
+			color: #fff;
+			border: none;
+			padding: 5px 10px;
+			border-radius: 5px;
+			cursor: pointer;
+			margin: 5px 0;
+		}
+
+		button:hover {
+			background-color: #222;
+		}   
+
+		/* Marcador */
+		#marcador {
+			margin-top: 10px;
+			text-align: center;
+		}
+
+		/* Animaciones */
+		.box1oculta.show {
+			animation: showBox 1s ease-in-out;
+		}
+
+		@keyframes showBox {
+			from {
+				opacity: 0;
+			}to {
+				opacity: 1;
+			}
+		}
+		
+	</style>
+</head>
+<body>
+	<h1>Elemento visible</h1>
+	<h2 id="marcador">Marcador: 0</h2>
+	<div>
+		<div id="box1" >
+			<p id="pregunta1">¿Qué no es UXD?</p>    
+			<div id="respuesta1" class="oculto">
+				<ul>
+						<li>Diseño de Interfaz de Usuario (UID): UID solo es una parte dse UXD</li>
+						<li>Usabilidad: De igual forma solo es una parte</li>
+						<li>Solo para usuarios: También se enfoca en las estrategias comerciales</li>
+						<li>Proceso back-end</li>
+				</ul>
+				<button onclick="showRandQuestion(1)">Correcto</button>
+				<button onclick="showRandQuestion(0)">Incorrecto</button>
+			</div>
+			<p id="pregunta2" class="oculto">Por qué es importante el diseño de la experiencia de usuario?</p>    
+			<div id="respuesta2" class="oculto">
+				<ul>
+						<li>Comprender las necesidades y emociones de los usuarios permite crear productos que sean más usables, agradables y que satisfagan mejor sus expectativas.</li>
+				</ul>
+				<button onclick="showRandQuestion(1)">Correcto</button>
+				<button onclick="showRandQuestion(0)">Incorrecto</button>
+			</div>
+			<p id="pregunta3" class="oculto">¿Cómo se satisfacen las necesidades del usuario?</p>    
+			<div id="respuesta3" class="oculto">
+				<ul>
+						<li>Considerando las acciones del usuario miesntras interactuan con el producto.</li>
+						<li>Entregandoles un producto de valor.</li>
+						<li>Valorando el tiempo que el usuario pone en usar el producto a cambio de lo que recibe al final.</li>
+				</ul>
+				<button onclick="showRandQuestion(1)">Correcto</button>
+				<button onclick="showRandQuestion(0)">Incorrecto</button>
+			</div>
+			
+			<p id="pregunta4" class="oculto">¿Qué significa "devolver valor" al usuario en UXD?</p>   
+			<div id="respuesta4" class="oculto">
+			<ul>
+				<li>Devolver valor al usuario significa que el producto le ofrece algo que realmente necesita y aprecia, a cambio del tiempo y la atención que le dedica.</li>
+			</ul>
+			<button onclick="showRandQuestion(1)">Correcto</button>
+			<button onclick="showRandQuestion(0)">Incorrecto</button>
+			</div>
+		</div>
+		<button id="change" onclick="showRandQuestion(0)">Cambiar pregunta</button>
+	</div>
+	
+	<button onclick="mostrarTexto()">Mostrar texto</button>
+	
+	<script>
+
+		var marcador=0;
+		var rand=1;
+		function mostrarTexto() {
+			document.getElementById("respuesta"+rand).classList.remove("oculto");
+		}
+
+		function ocultarTexto(i,j) {
+			try{
+				document.getElementById("pregunta"+rand).classList.add("oculto");            
+			} catch(error){
+				console.error(error);
+			}
+
+			const ids = "respuesta" + i; // Usa const para variables que no se reasignan
+			marcador += j; // Asume que la variable 'marcador' está declarada globalmente
+			document.getElementById("marcador").textContent = "Marcador:"+marcador; // Elimina el .. innecesario
+			document.getElementById(ids).classList.add("oculto");
+			
+		}
+
+		function showRandQuestion(y){
+			ocultarTexto(rand,y);
+			
+			
+			
+			rand=Math.floor(Math.random() * 3+1);
+			const ids="pregunta"+rand;
+
+			document.getElementById(ids).classList.remove("oculto");
+		}
+	</script>
+</body>
+</html></center>

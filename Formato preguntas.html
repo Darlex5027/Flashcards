@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards - UXD</title>
+   <h2>Título a la derecha</h2>
+
+<style>
+/* Estilos básicos */
+body {
+
+  font-family: sans-serif; /* Establece una fuente sin serif predeterminada */
+  margin: 20px; /* Agrega un margen alrededor de la página */
+}
+
+/* Encabezado */
+h1, h2 {
+  margin-bottom: 10px; /* Agrega espacio después de títulos */
+}
+
+h2 {
+  text-align: left; /* Alinea los títulos h2 a la derecha */
+}
+
+/* Textos */
+textarea {
+  border: 1px solid #ccc; /* Añade un borde gris claro a los text areas */
+  padding: 5px; /* Agrega relleno dentro de los text areas */
+  font-size: 16px; /* Establece un tamaño de letra más grande */
+}
+
+/* Botón */
+button {
+  background-color: #4CAF50; /* Color verde para el botón */
+  color: white; /* Texto blanco en el botón */
+  border: none; /* Elimina el borde del botón */
+  padding: 10px 20px; /* Agrega relleno al botón */
+  text-align: center; /* Centra el texto del botón */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+}
+
+button:hover { /* Efecto al pasar el mouse sobre el botón */
+  background-color: #3e8e41;
+}
+
+/* Resultados generados */
+.oculto { /* Oculta las preguntas y respuestas generadas por defecto */
+  display: none;
+}
+
+#result { /* Estilos específicos para el text area de resultados */
+  height: 300px; /* Aumenta la altura del text area */
+  font-size: 14px; /* Reduce un poco el tamaño de la letra */
+}
+
+/* Opcional: Colores para diferenciar elementos */
+#pregunta {
+  background-color: #f0f0f0; /* Color de fondo gris claro para la pregunta */
+}
+
+#respuestas {
+  background-color: #e0e0e0; /* Color de fondo gris más claro para las respuestas */
+}
+
+div {
+    display: inline-grid;
+}
+</style>
+
+</head>
+<body>
+
+    <h1>Flashcards - Diseño de Experiencia de Usuario (UXD)</h1>
+    <div>
+        <h2>Número de pregunta inicial</h2>
+        <textarea id="num" rows="2" cols="4"></textarea>
+        <br>
+        <h2>Pregunta:</h2>
+        <textarea id="pregunta" rows="4" cols="50"></textarea>
+        <br>
+        <h2>Respuesta:</h2>
+        <textarea id="respuestas" rows="4" cols="50"></textarea>
+        <br>
+    </div>
+    <div>
+        <h2>Resultado para agregar:</h2>
+        <textarea id="result" rows="20" cols="100"></textarea>
+        <button onclick="armar()">Agregar</button>
+    </div>
+    <script >
+        const linea1 = "<p id=";
+        const linea2 = ""
+        function armar(){
+            var preg=document.getElementById("num").value;
+            const pregunta = document.getElementById("pregunta").value;
+            const resp = document.getElementById("respuestas").value;
+            const textoact = document.getElementById("result").value;
+
+            document.getElementById("result").textContent = textoact+`
+<p id="pregunta`+preg+`" class="oculto">`+pregunta+`</p>   
+<div id="respuesta`+preg+`" class="oculto">
+    <ul>
+        <li>`+resp+`</li>
+    </ul>
+    <button onclick="showRandQuestion(1)">Correcto</button>
+    <button onclick="showRandQuestion(0)">Incorrecto</button>
+</div> `;
+            preg++;
+            document.getElementById("num").textContent=preg;
+        }
+    </script>
+</body>
+</html>
