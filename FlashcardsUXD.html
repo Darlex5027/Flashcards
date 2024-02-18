@@ -228,6 +228,106 @@ Comunicación: Facilitar la comunicación entre el equipo de desarrollo.</li>
     </ul>
     <button onclick="showRandQuestion(1)">Correcto</button>
     <button onclick="showRandQuestion(0)">Incorrecto</button>
+</div>
+		<p id="pregunta17" class="oculto">¿Qué es la estructura de un producto?</p>   
+<div id="respuesta17" class="oculto">
+    <ul>
+        <li>La estructura define cómo el usuario interactúa con el producto y cómo se comporta el sistema. Se divide en dos componentes: diseño de interacción y arquitectura de la información.</li>
+    </ul>
+    <button onclick="showRandQuestion(1)">Correcto</button>
+    <button onclick="showRandQuestion(0)">Incorrecto</button>
+</div> 
+<p id="pregunta18" class="oculto"> ¿Qué es el diseño de interacción?</p>   
+<div id="respuesta18" class="oculto">
+    <ul>
+        <li>Define cómo los usuarios pueden interactuar con el producto y cómo se comporta el sistema en respuesta a esas interacciones.</li>
+    </ul>
+    <button onclick="showRandQuestion(1)">Correcto</button>
+    <button onclick="showRandQuestion(0)">Incorrecto</button>
+</div> 
+<p id="pregunta19" class="oculto">¿Qué es la arquitectura de la información?</p>   
+<div id="respuesta19" class="oculto">
+    <ul>
+        <li>Define la disposición de los elementos del contenido y cómo están organizados para facilitar la comprensión humana.</li>
+    </ul>
+    <button onclick="showRandQuestion(1)">Correcto</button>
+    <button onclick="showRandQuestion(0)">Incorrecto</button>
+</div> 
+<p id="pregunta20" class="oculto">¿Qué características tiene un buen diseño de interacción?</p>   
+<div id="respuesta20" class="oculto">
+    <ul>
+        <li>Ayuda a las personas a lograr sus objetivos.
+Comunica efectivamente la interactividad y la funcionalidad.
+Informa a los usuarios sobre los cambios de estado.
+Evita errores o equivocaciones del usuario.</li>
+    </ul>
+    <button onclick="showRandQuestion(1)">Correcto</button>
+    <button onclick="showRandQuestion(0)">Incorrecto</button>
+</div> 
+<p id="pregunta21" class="oculto">¿Qué características tiene una buena arquitectura de la información?</p>   
+<div id="respuesta21" class="oculto">
+    <ul>
+        <li>Organiza, categoriza y prioriza la información.
+Hace que la información sea fácil de entender y navegar.
+Es flexible y adaptable al cambio.
+Es apropiada para la audiencia.</li>
+    </ul>
+    <button onclick="showRandQuestion(1)">Correcto</button>
+    <button onclick="showRandQuestion(0)">Incorrecto</button>
+</div> 
+<p id="pregunta22" class="oculto">¿Por qué es importante la estructura?</p>   
+<div id="respuesta22" class="oculto">
+    <ul>
+        <li>Una buena estructura permite:
+
+Usabilidad: Facilitar el uso del producto por parte del usuario.
+Eficiencia: Optimizar el tiempo y esfuerzo del usuario.
+Satisfacción: Mejorar la experiencia del usuario.</li>
+    </ul>
+    <button onclick="showRandQuestion(1)">Correcto</button>
+    <button onclick="showRandQuestion(0)">Incorrecto</button>
+</div> 
+<p id="pregunta23" class="oculto">¿Cómo se define la estructura?</p>   
+<div id="respuesta23" class="oculto">
+    <ul>
+        <li>Se realiza a través de un proceso que incluye:
+
+Análisis de las necesidades del usuario: Definir cómo los usuarios interactúan con productos similares y qué esperan del producto.
+Diseño de la interacción: Definir las interfaces de usuario y la fluidez de la interacción.
+Diseño de la arquitectura de la información: Definir la organización y categorización del contenido.</li>
+    </ul>
+    <button onclick="showRandQuestion(1)">Correcto</button>
+    <button onclick="showRandQuestion(0)">Incorrecto</button>
+</div> 
+<p id="pregunta24" class="oculto">¿Qué herramientas se utilizan para definir la estructura?</p>   
+<div id="respuesta24" class="oculto">
+    <ul>
+        <li>Mapas de viaje del usuario: Visualizar las diferentes etapas del usuario al usar el producto.
+Wireframes: Diseños de baja fidelidad para visualizar la estructura del producto.
+Prototipos: Simulaciones del producto para probar la interacción y la usabilidad.</li>
+    </ul>
+    <button onclick="showRandQuestion(1)">Correcto</button>
+    <button onclick="showRandQuestion(0)">Incorrecto</button>
+</div> 
+<p id="pregunta25" class="oculto">¿Qué errores comunes se cometen al definir la estructura?</p>   
+<div id="respuesta25" class="oculto">
+    <ul>
+        <li>No tener en cuenta las necesidades del usuario.
+Diseñar una estructura compleja y difícil de usar.
+No considerar la escalabilidad y el crecimiento del producto.</li>
+    </ul>
+    <button onclick="showRandQuestion(1)">Correcto</button>
+    <button onclick="showRandQuestion(0)">Incorrecto</button>
+</div> 
+<p id="pregunta26" class="oculto">¿Cómo puedo mejorar la estructura de mi producto?</p>   
+<div id="respuesta26" class="oculto">
+    <ul>
+        <li>Realiza pruebas de usabilidad con usuarios reales.
+Solicita comentarios y sugerencias de los usuarios.
+Mantén la estructura actualizada y adaptable al cambio.</li>
+    </ul>
+    <button onclick="showRandQuestion(1)">Correcto</button>
+    <button onclick="showRandQuestion(0)">Incorrecto</button>
 </div> 
 		<button id="change" onclick="showRandQuestion(0)">Cambiar pregunta</button>
 	</div>
@@ -263,7 +363,7 @@ Comunicación: Facilitar la comunicación entre el equipo de desarrollo.</li>
 			
 			do{
     			var pivot=rand;
-				rand=Math.floor(Math.random() * 15+1);
+				rand=Math.floor(Math.random() * 26+1);
     		}while(rand==pivot);
 
 			const ids="pregunta"+rand;
